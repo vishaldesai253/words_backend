@@ -7,6 +7,15 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res
+    .status(200)
+    .send(
+      "Welcome to backend api of words app of Incubyte Hackerearth Challenege\n"
+    );
+});
+
 app.get("/getwords", (req, res) => {
   console.log(req.body);
   mySqlApi
